@@ -1209,8 +1209,8 @@ class ChartModule {
       // Simulate loading delay
       await new Promise(resolve => setTimeout(resolve, 1000));
       
-      // For now, show a placeholder message since we don't have a real contract address
-      this.showChartPlaceholder();
+      // Load the real DexScreener chart with the provided contract address
+      this.loadRealChart();
       
       this.isLoaded = true;
       this.app.getModule('analytics')?.trackChartLoad();
@@ -1256,9 +1256,9 @@ class ChartModule {
     }
   }
 
-  loadRealChart(contractAddress) {
-    // This method would be called when a real contract address is available
-    const dexScreenerUrl = `https://dexscreener.com/ethereum/${contractAddress}?embed=1&theme=dark&trades=0&info=0`;
+  loadRealChart(contractAddress = '2RL73y7ocSm5qTcrJfiBhrCVtog2FRHDBxGw9bN1pump') {
+    // This method loads a real DexScreener chart - defaults to the provided contract address
+    const dexScreenerUrl = `https://dexscreener.com/solana/${contractAddress}?embed=1&theme=dark&trades=0&info=0`;
     
     if (this.elements.iframe) {
       this.elements.iframe.src = dexScreenerUrl;

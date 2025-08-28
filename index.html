@@ -155,25 +155,6 @@
                     <span class="brand__primary">Robosexuals</span>
                     <span class="brand__subtitle">Love in the Age of Machines</span>
                 </h1>
-                <div class="crypto-address">
-                    <label class="crypto-address__label">Contract Address (CA):</label>
-                    <div class="crypto-address__container">
-                        <input type="text" 
-                               class="crypto-address__input" 
-                               id="contract-address" 
-                               value="TBD3xF7K9mN2pQ8vR1sY4jW6eZ5nA0qL9tM8cH" 
-                               readonly 
-                               aria-label="Contract Address">
-                        <button class="crypto-address__copy" 
-                                id="copy-address" 
-                                aria-label="Copy contract address to clipboard"
-                                title="Copy to clipboard">
-                            <span class="copy-icon">📋</span>
-                            <span class="copy-text">Copy</span>
-                        </button>
-                    </div>
-                    <div class="copy-feedback" id="copy-feedback" aria-live="polite"></div>
-                </div>
             </div>
             
             <nav class="nav" role="navigation" aria-label="Main navigation">
@@ -228,6 +209,31 @@
             </nav>
         </div>
     </header>
+    
+    <!-- Crypto Address Section -->
+    <section class="crypto-address-section">
+        <div class="container">
+            <div class="crypto-address">
+                <label class="crypto-address__label">Contract Address (CA):</label>
+                <div class="crypto-address__container">
+                    <input type="text" 
+                           class="crypto-address__input" 
+                           id="contract-address" 
+                           value="2RL73y7ocSm5qTcrJfiBhrCVtog2FRHDBxGw9bN1pump" 
+                           readonly 
+                           aria-label="Contract Address">
+                    <button class="crypto-address__copy" 
+                            id="copy-address" 
+                            aria-label="Copy contract address to clipboard"
+                            title="Copy to clipboard">
+                        <span class="copy-icon">📋</span>
+                        <span class="copy-text">Copy</span>
+                    </button>
+                </div>
+                <div class="copy-feedback" id="copy-feedback" aria-live="polite"></div>
+            </div>
+        </div>
+    </section>
     
     <!-- Main Content -->
     <main id="main-content" role="main">
