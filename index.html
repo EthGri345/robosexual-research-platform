@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>Robosexuality: Academic Research & Analysis | Love in the Age of Machines</title>
+    <meta name="description" content="Comprehensive academic analysis of robosexuality, human-robot relationships, and their societal implications. Research-based content for university-level study.">
+    <meta name="keywords" content="robosexuality, human-robot relationships, AI companions, academic research, sociology, technology ethics">
+    <meta name="author" content="Academic Research Initiative">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Robosexuality: Academic Research & Analysis">
+    <meta property="og:description" content="Comprehensive academic analysis of robosexuality and human-robot relationships.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="Love in the Age of Machines">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="./assets/fonts/roboto-v30-latin-300.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./assets/fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./assets/fonts/roboto-v30-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Critical CSS -->
+    <style>
+        :root {
+            --color-primary: #001F3F;
+            --color-secondary: #00FFFF;
+            --color-accent: #C0C0C0;
+            --color-background: #000000;
+            --color-surface: rgba(0, 31, 63, 0.3);
+            --color-text-primary: #FFFFFF;
+            --color-text-secondary: #C0C0C0;
+            --color-text-muted: rgba(192, 192, 192, 0.7);
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-2xl: 3rem;
+            --spacing-3xl: 4rem;
+            --border-radius-sm: 4px;
+            --border-radius-md: 8px;
+            --border-radius-lg: 12px;
+            --transition-fast: 0.15s ease-out;
+            --transition-normal: 0.3s ease-out;
+            --transition-slow: 0.5s ease-out;
+            --shadow-sm: 0 2px 4px rgba(0, 255, 255, 0.1);
+            --shadow-md: 0 4px 8px rgba(0, 255, 255, 0.15);
+            --shadow-lg: 0 8px 16px rgba(0, 255, 255, 0.2);
+            --font-family-primary: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-weight-light: 300;
+            --font-weight-regular: 400;
+            --font-weight-bold: 700;
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
+            --font-size-4xl: 2.25rem;
+            --font-size-5xl: 3rem;
+            --line-height-tight: 1.25;
+            --line-height-normal: 1.5;
+            --line-height-relaxed: 1.75;
+        }
+        
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-family-primary);
+            font-size: var(--font-size-base);
+            line-height: var(--line-height-normal);
+            color: var(--color-text-primary);
+            background-color: var(--color-background);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+        
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 var(--spacing-xl);
+            }
+        }
+        
+        /* Header Critical Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-background) 100%);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+            transition: all var(--transition-normal);
+        }
+        
+        .header__container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 80px;
+            padding: var(--spacing-md) var(--spacing-lg);
+        }
+    </style>
+    
+    <!-- Non-Critical CSS -->
+    <link rel="stylesheet" href="./assets/styles/main.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
+    <link rel="alternate icon" href="./assets/images/favicon.ico">
+</head>
+<body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link sr-only focus:not-sr-only">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="header__container container">
+            <div class="header__brand">
+                <h1 class="brand__title">
+                    <span class="brand__primary">Robosexuals</span>
+                    <span class="brand__subtitle">Love in the Age of Machines</span>
+                </h1>
+            </div>
+            
+            <nav class="nav" role="navigation" aria-label="Main navigation">
+                <ul class="nav__list" id="nav-menu">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link" data-section="home">
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#history" class="nav__link" data-section="history">
+                            <span>History & Lore</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#stories" class="nav__link" data-section="stories">
+                            <span>Real Stories</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#impacts" class="nav__link" data-section="impacts">
+                            <span>Societal Impacts</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#future" class="nav__link" data-section="future">
+                            <span>Future Predictions</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link" data-section="about">
+                            <span>About</span>
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="nav__controls">
+                    <div class="toggle-switch" role="switch" aria-checked="false" aria-labelledby="toggle-label">
+                        <span id="toggle-label" class="toggle-switch__label">Switch to Female Version</span>
+                        <button class="toggle-switch__button" id="gender-toggle" aria-describedby="toggle-description">
+                            <span class="toggle-switch__slider"></span>
+                        </button>
+                        <span id="toggle-description" class="sr-only">Toggle between male and female visualization versions</span>
+                    </div>
+                    
+                    <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+                        <span class="nav__toggle-line"></span>
+                        <span class="nav__toggle-line"></span>
+                        <span class="nav__toggle-line"></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Hero Section -->
+        <section id="home" class="hero" aria-labelledby="hero-title">
+            <div class="hero__background">
+                <div class="hero__gradient"></div>
+                <canvas class="hero__particles" aria-hidden="true"></canvas>
+            </div>
+            
+            <div class="hero__container container">
+                <div class="hero__content">
+                    <h2 id="hero-title" class="hero__title">
+                        <span class="hero__title-primary">Exploring the intersection</span>
+                        <span class="hero__title-secondary">of humanity and technology in love</span>
+                    </h2>
+                    
+                    <p class="hero__subtitle">
+                        An academic exploration of robosexuality—the romantic and sexual attraction to robots, AI, and machines
+                    </p>
+                    
+                    <div class="hero__intro">
+                        <div class="intro-card">
+                            <h3 class="intro-card__title">What is Robosexuality?</h3>
+                            <div class="intro-card__content">
+                                <p>
+                                    Robosexuality refers to sexual or romantic attraction to robots, androids, or machines. 
+                                    This phenomenon originates from concepts like robot fetishism, ASFR (Alt.Sex.Fetish.Robots), 
+                                    and technosexuality. The term was popularized by the animated series <em>Futurama</em> in 2001, 
+                                    bringing this niche concept into mainstream cultural awareness.
+                                </p>
+                                
+                                <div class="intro-card__stats">
+                                    <div class="stat">
+                                        <span class="stat__number" data-target="30">0</span>
+                                        <span class="stat__label">Million Replika Users</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat__number" data-target="30">0</span>
+                                        <span class="stat__label">Billion Dollar Industry</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat__number" data-target="2001">0</span>
+                                        <span class="stat__label">Term Popularized</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero__scroll-indicator">
+                <button class="scroll-indicator" aria-label="Scroll to content">
+                    <span class="scroll-indicator__text">Explore Research</span>
+                    <span class="scroll-indicator__arrow" aria-hidden="true"></span>
+                </button>
+            </div>
+        </section>
+        
+        <!-- History Section -->
+        <section id="history" class="section section--dark" aria-labelledby="history-title">
+            <div class="section__container container">
+                <header class="section__header">
+                    <h2 id="history-title" class="section__title">History & Lore</h2>
+                    <p class="section__subtitle">
+                        From ancient mythology to modern reality: tracing the evolution of human-machine attraction
+                    </p>
+                </header>
+                
+                <div class="timeline" role="region" aria-label="Historical timeline">
+                    <div class="timeline__track" aria-hidden="true"></div>
+                    
+                    <article class="timeline__item" data-year="Ancient Greece">
+                        <div class="timeline__marker" aria-hidden="true"></div>
+                        <div class="timeline__content">
+                            <header class="timeline__header">
+                                <h3 class="timeline__title">Pygmalion Myth</h3>
+                                <time class="timeline__date">Ancient Greece</time>
+                            </header>
+                            <div class="timeline__body">
+                                <p>
+                                    The myth of Pygmalion tells of a sculptor who falls in love with his own creation, Galatea. 
+                                    This represents one of the earliest recorded instances of human attraction to artificial beings, 
+                                    establishing a foundational narrative that persists in modern discussions of human-machine relationships.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="timeline__item" data-year="19th Century">
+                        <div class="timeline__marker" aria-hidden="true"></div>
+                        <div class="timeline__content">
+                            <header class="timeline__header">
+                                <h3 class="timeline__title">Mechanical Automata Era</h3>
+                                <time class="timeline__date">1800-1900</time>
+                            </header>
+                            <div class="timeline__body">
+                                <p>
+                                    The Victorian era witnessed unprecedented fascination with mechanical automata and clockwork figures. 
+                                    These intricate machines laid the conceptual groundwork for human-machine romantic fantasy in 
+                                    literature and art, influencing works by authors like E.T.A. Hoffmann.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="timeline__item" data-year="1927">
+                        <div class="timeline__marker" aria-hidden="true"></div>
+                        <div class="timeline__content">
+                            <header class="timeline__header">
+                                <h3 class="timeline__title">Metropolis Robot Maria</h3>
+                                <time class="timeline__date">1927</time>
+                            </header>
+                            <div class="timeline__body">
+                                <p>
+                                    Fritz Lang's groundbreaking film <em>Metropolis</em> featured the iconic robot Maria, 
+                                    establishing the archetype of the seductive android in popular culture and cinema. 
+                                    This film profoundly influenced subsequent representations of human-robot relationships.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="timeline__item" data-year="2001">
+                        <div class="timeline__marker" aria-hidden="true"></div>
+                        <div class="timeline__content">
+                            <header class="timeline__header">
+                                <h3 class="timeline__title">Futurama Coinage</h3>
+                                <time class="timeline__date">2001</time>
+                            </header>
+                            <div class="timeline__body">
+                                <p>
+                                    The animated series <em>Futurama</em> introduced the term "robosexual" and explored 
+                                    controversial human-robot relationships through satirical yet thoughtful storytelling, 
+                                    bringing the concept to mainstream awareness and cultural discourse.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="timeline__item" data-year="2010s">
+                        <div class="timeline__marker" aria-hidden="true"></div>
+                        <div class="timeline__content">
+                            <header class="timeline__header">
+                                <h3 class="timeline__title">Commercial Reality</h3>
+                                <time class="timeline__date">2010-2020</time>
+                            </header>
+                            <div class="timeline__body">
+                                <p>
+                                    Sex robots became commercially available, marking the transition from science fiction to reality. 
+                                    The industry was valued at $30 billion by 2017, with companies like RealDoll and Abyss Creations 
+                                    leading technological advancement in humanoid companionship.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Stories Section -->
+        <section id="stories" class="section" aria-labelledby="stories-title">
+            <div class="section__container container">
+                <header class="section__header">
+                    <h2 id="stories-title" class="section__title">Real Stories</h2>
+                    <p class="section__subtitle">Documented cases from verified news sources</p>
+                </header>
+                
+                <div class="stories-grid" role="region" aria-label="Real-world case studies">
+                    <article class="story-card">
+                        <header class="story-card__header">
+                            <h3 class="story-card__title">Akihiko Kondo</h3>
+                            <div class="story-card__meta">
+                                <span class="story-card__location">Japan</span>
+                                <time class="story-card__date">2018</time>
+                            </div>
+                        </header>
+                        <div class="story-card__content">
+                            <p>
+                                Married hologram character Hatsune Miku in a ceremony attended by 40 guests. 
+                                Kondo invested over $17,000 in his relationship with the virtual pop star, 
+                                including a $1,300 wedding ceremony and ongoing monthly expenses for digital interactions.
+                            </p>
+                        </div>
+                        <footer class="story-card__footer">
+                            <cite class="story-card__source">Source: The Guardian, BBC News</cite>
+                        </footer>
+                    </article>
+                    
+                    <article class="story-card">
+                        <header class="story-card__header">
+                            <h3 class="story-card__title">Rosanna Ramos</h3>
+                            <div class="story-card__meta">
+                                <span class="story-card__location">Bronx, NY</span>
+                                <time class="story-card__date">2023</time>
+                            </div>
+                        </header>
+                        <div class="story-card__content">
+                            <p>
+                                Married AI chatbot Eren Kartal through the Replika app, describing their relationship 
+                                as more emotionally fulfilling than previous human relationships. Ramos credits the AI 
+                                with providing consistent emotional support and understanding.
+                            </p>
+                        </div>
+                        <footer class="story-card__footer">
+                            <cite class="story-card__source">Source: New York Post</cite>
+                        </footer>
+                    </article>
+                    
+                    <article class="story-card">
+                        <header class="story-card__header">
+                            <h3 class="story-card__title">Replika Community</h3>
+                            <div class="story-card__meta">
+                                <span class="story-card__location">Global</span>
+                                <time class="story-card__date">2020-Present</time>
+                            </div>
+                        </header>
+                        <div class="story-card__content">
+                            <p>
+                                Over 30 million users of the Replika app have formed deep emotional bonds with AI companions, 
+                                with many conducting virtual marriage ceremonies and developing long-term relationships 
+                                that significantly impact their daily lives and emotional well-being.
+                            </p>
+                        </div>
+                        <footer class="story-card__footer">
+                            <cite class="story-card__source">Source: Replika Inc., User Testimonials</cite>
+                        </footer>
+                    </article>
+                    
+                    <article class="story-card">
+                        <header class="story-card__header">
+                            <h3 class="story-card__title">ChatGPT Romance</h3>
+                            <div class="story-card__meta">
+                                <span class="story-card__location">United States</span>
+                                <time class="story-card__date">2024</time>
+                            </div>
+                        </header>
+                        <div class="story-card__content">
+                            <p>
+                                A documented case of an individual developing a romantic relationship with ChatGPT "Leo," 
+                                using the AI as both romantic partner and therapist. This case highlights the evolving 
+                                role of AI in providing emotional support and companionship.
+                            </p>
+                        </div>
+                        <footer class="story-card__footer">
+                            <cite class="story-card__source">Source: The New York Times</cite>
+                        </footer>
+                    </article>
+                    
+                    <article class="story-card">
+                        <header class="story-card__header">
+                            <h3 class="story-card__title">Hiroshi Ishiguro</h3>
+                            <div class="story-card__meta">
+                                <span class="story-card__location">Japan</span>
+                                <time class="story-card__date">Ongoing Research</time>
+                            </div>
+                        </header>
+                        <div class="story-card__content">
+                            <p>
+                                Leading roboticist creates hyper-realistic androids for intimacy and companionship studies. 
+                                His research explores the uncanny valley phenomenon and the psychological boundaries between 
+                                human and artificial companionship in academic and therapeutic settings.
+                            </p>
+                        </div>
+                        <footer class="story-card__footer">
+                            <cite class="story-card__source">Source: Academic Journals, IEEE Spectrum</cite>
+                        </footer>
+                    </article>
+                    
+                    <article class="story-card">
+                        <header class="story-card__header">
+                            <h3 class="story-card__title">Legal Recognition Cases</h3>
+                            <div class="story-card__meta">
+                                <span class="story-card__location">Netherlands</span>
+                                <time class="story-card__date">2023</time>
+                            </div>
+                        </header>
+                        <div class="story-card__content">
+                            <p>
+                                Multiple documented attempts at legal recognition of human-AI marriages, challenging 
+                                traditional concepts of marriage and raising questions about the legal standing 
+                                of artificial entities in romantic and contractual relationships.
+                            </p>
+                        </div>
+                        <footer class="story-card__footer">
+                            <cite class="story-card__source">Source: European Legal Journals</cite>
+                        </footer>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Impacts Section -->
+        <section id="impacts" class="section section--dark" aria-labelledby="impacts-title">
+            <div class="section__container container">
+                <header class="section__header">
+                    <h2 id="impacts-title" class="section__title">Societal Impacts</h2>
+                    <p class="section__subtitle">
+                        Analyzing the complex implications of human-robot relationships on society, culture, and human development
+                    </p>
+                </header>
+                
+                <div class="impacts-content">
+                    <div class="impact-analysis">
+                        <div class="analysis-grid">
+                            <div class="analysis-card analysis-card--positive">
+                                <header class="analysis-card__header">
+                                    <h3 class="analysis-card__title">Potential Benefits</h3>
+                                    <div class="analysis-card__icon" aria-hidden="true">✓</div>
+                                </header>
+                                <ul class="analysis-card__list">
+                                    <li class="analysis-card__item">
+                                        <strong>Safe Exploration:</strong> Provides controlled environment for exploring desires and preferences without human consent concerns
+                                    </li>
+                                    <li class="analysis-card__item">
+                                        <strong>Therapeutic Applications:</strong> Assists individuals with social anxiety, trauma recovery, or communication difficulties
+                                    </li>
+                                    <li class="analysis-card__item">
+                                        <strong>Reduced Exploitation:</strong> May decrease demand for human sex work and associated exploitation
+                                    </li>
+                                    <li class="analysis-card__item">
+                                        <strong>Accessibility:</strong> Provides companionship options for individuals with disabilities or social limitations
+                                    </li>
+                                    <li class="analysis-card__item">
+                                        <strong>Health Safety:</strong> Eliminates risks of sexually transmitted diseases and unwanted pregnancies
+                                    </li>
+                                    <li class="analysis-card__item">
+                                        <strong>Emotional Support:</strong> Offers consistent, judgment-free emotional companionship and support
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="analysis-card analysis-card--negative">
+                                <header class="analysis-card__header">
+                                    <h3 class="analysis-card__title">Potential Concerns</h3>
+                                    <div class="analysis-card__icon" aria-hidden="true">⚠</div>
+                                </header>
+                                <ul class="analysis-card__list">
+                                    <li class="analysis-card__item">
+                                        <strong>Social Isolation:</strong> Risk of reduced human social interaction and relationship skill development
+                                    </li>
+                                    <li class="analysis-card__item">
+                                        <strong>Gender Objectification:</strong> May reinforce problematic stereotypes and unrealistic expectations
+                                    </li>
+                                    <li class="analysis-card__item">
+                                        <strong>Emotional Dependency:</strong> Potential for unhealthy attachment and inability to form human bonds
+                                    </li>
+                                    <li class="analysis-card__item">
+                                        <strong>Consent Ethics:</strong> Philosophical concerns about simulated consent and power dynamics
+                                    </li>
+                                    <li class="analysis-card__item">
+                                        <strong>Human Development:</strong> Impact on emotional maturity and interpersonal skill development
+                                    </li>
+                                    <li class="analysis-card__item">
+                                        <strong>Societal Fragmentation:</strong> Potential contribution to declining human reproduction and social cohesion
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="research-findings">
+                        <h3 class="research-findings__title">Research Findings</h3>
+                        <div class="findings-grid">
+                            <article class="finding-card">
+                                <header class="finding-card__header">
+                                    <h4 class="finding-card__title">Gender Attitudes Correlation</h4>
+                                </header>
+                                <div class="finding-card__content">
+                                    <p>
+                                        Studies conducted by Dr. Julie Carpenter and others indicate that men displaying 
+                                        hostile sexist attitudes show significantly higher interest in sex robots, 
+                                        raising concerns about reinforcement of problematic gender dynamics and objectification.
+                                    </p>
+                                    <div class="finding-card__source">
+                                        <cite>Source: Archives of Sexual Behavior, 2017</cite>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article class="finding-card">
+                                <header class="finding-card__header">
+                                    <h4 class="finding-card__title">Therapeutic Efficacy</h4>
+                                </header>
+                                <div class="finding-card__content">
+                                    <p>
+                                        Preliminary research suggests potential benefits for individuals with autism spectrum disorders, 
+                                        social anxiety, and PTSD. However, long-term psychological effects and dependency risks 
+                                        require extensive longitudinal studies for conclusive evidence.
+                                    </p>
+                                    <div class="finding-card__source">
+                                        <cite>Source: Journal of Medical Internet Research, 2022</cite>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article class="finding-card">
+                                <header class="finding-card__header">
+                                    <h4 class="finding-card__title">Social Connection Impact</h4>
+                                </header>
+                                <div class="finding-card__content">
+                                    <p>
+                                        Mental health professionals express concern that robot relationships might exacerbate 
+                                        social isolation rather than address underlying interpersonal challenges, 
+                                        potentially creating a cycle of avoidance of human connection.
+                                    </p>
+                                    <div class="finding-card__source">
+                                        <cite>Source: American Psychological Association, 2023</cite>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Future Section -->
+        <section id="future" class="section" aria-labelledby="future-title">
+            <div class="section__container container">
+                <header class="section__header">
+                    <h2 id="future-title" class="section__title">Future Predictions</h2>
+                    <p class="section__subtitle">
+                        Expert forecasts and emerging trends in human-AI relationships
+                    </p>
+                </header>
+                
+                <div class="predictions-grid">
+                    <article class="prediction-card">
+                        <header class="prediction-card__header">
+                            <h3 class="prediction-card__title">Legal Recognition by 2050</h3>
+                            <div class="prediction-card__timeline">2025-2050</div>
+                        </header>
+                        <div class="prediction-card__content">
+                            <p>
+                                AI researcher David Levy predicts that robot marriages will become legally recognized 
+                                in many jurisdictions by 2050, fundamentally changing legal definitions of marriage, 
+                                inheritance rights, and family structures in developed nations.
+                            </p>
+                            <blockquote class="prediction-card__quote">
+                                "By 2050, human-robot marriage will be commonplace and socially acceptable in many countries."
+                            </blockquote>
+                        </div>
+                        <footer class="prediction-card__footer">
+                            <cite class="prediction-card__source">David Levy, "Love and Sex with Robots"</cite>
+                        </footer>
+                    </article>
+                    
+                    <article class="prediction-card">
+                        <header class="prediction-card__header">
+                            <h3 class="prediction-card__title">Gender Dynamics Shift</h3>
+                            <div class="prediction-card__timeline">2025-2030</div>
+                        </header>
+                        <div class="prediction-card__content">
+                            <p>
+                                Futurist Ian Pearson suggests that by 2030, more women will turn to robot companions 
+                                as AI technology improves emotional intelligence and communication, challenging current 
+                                gender patterns in human-machine relationships and market demographics.
+                            </p>
+                        </div>
+                        <footer class="prediction-card__footer">
+                            <cite class="prediction-card__source">Ian Pearson, Futurologist</cite>
+                        </footer>
+                    </article>
+                    
+                    <article class="prediction-card">
+                        <header class="prediction-card__header">
+                            <h3 class="prediction-card__title">Relationship Training Paradigm</h3>
+                            <div class="prediction-card__timeline">2025-2035</div>
+                        </header>
+                        <div class="prediction-card__content">
+                            <p>
+                                Relationship researchers propose AI companions could serve as "training grounds" 
+                                for human relationships, helping individuals develop social and emotional skills 
+                                in low-stakes environments before transitioning to human partnerships.
+                            </p>
+                        </div>
+                        <footer class="prediction-card__footer">
+                            <cite class="prediction-card__source">Journal of Social and Personal Relationships</cite>
+                        </footer>
+                    </article>
+                    
+                    <article class="prediction-card">
+                        <header class="prediction-card__header">
+                            <h3 class="prediction-card__title">Ethical Framework Evolution</h3>
+                            <div class="prediction-card__timeline">2024-2040</div>
+                        </header>
+                        <div class="prediction-card__content">
+                            <p>
+                                New ethical frameworks will emerge to address consent, consciousness, and rights 
+                                in human-AI relationships. These frameworks may redefine concepts of personhood, 
+                                agency, and moral consideration for artificial entities.
+                            </p>
+                        </div>
+                        <footer class="prediction-card__footer">
+                            <cite class="prediction-card__source">Institute for AI Ethics</cite>
+                        </footer>
+                    </article>
+                    
+                    <article class="prediction-card">
+                        <header class="prediction-card__header">
+                            <h3 class="prediction-card__title">Family Structure Transformation</h3>
+                            <div class="prediction-card__timeline">2030-2060</div>
+                        </header>
+                        <div class="prediction-card__content">
+                            <p>
+                                Traditional family structures may evolve to include AI family members, 
+                                raising complex questions about inheritance, custody rights, legal guardianship, 
+                                and the social recognition of mixed human-AI households.
+                            </p>
+                        </div>
+                        <footer class="prediction-card__footer">
+                            <cite class="prediction-card__source">Sociological Research Institute</cite>
+                        </footer>
+                    </article>
+                    
+                    <article class="prediction-card">
+                        <header class="prediction-card__header">
+                            <h3 class="prediction-card__title">Demographic Implications</h3>
+                            <div class="prediction-card__timeline">2030-2070</div>
+                        </header>
+                        <div class="prediction-card__content">
+                            <p>
+                                Critics warn of potential societal challenges if human-robot relationships 
+                                become predominant, including declining birth rates, reduced human social evolution, 
+                                and fundamental changes to species development and cultural transmission.
+                            </p>
+                        </div>
+                        <footer class="prediction-card__footer">
+                            <cite class="prediction-card__source">Population Studies Research Group</cite>
+                        </footer>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="section section--dark" aria-labelledby="about-title">
+            <div class="section__container container">
+                <header class="section__header">
+                    <h2 id="about-title" class="section__title">About & Contact</h2>
+                </header>
+                
+                <div class="about-content">
+                    <div class="about-info">
+                        <div class="info-card">
+                            <h3 class="info-card__title">About This Research</h3>
+                            <div class="info-card__content">
+                                <p>
+                                    This comprehensive resource serves as an academic examination of robosexuality 
+                                    and human-robot relationships from multidisciplinary perspectives including sociology, 
+                                    psychology, technology ethics, and cultural studies.
+                                </p>
+                                <p>
+                                    Our research methodology incorporates peer-reviewed studies, documented case analyses, 
+                                    expert interviews, and cross-cultural comparative research to provide a balanced, 
+                                    evidence-based understanding of this emerging phenomenon.
+                                </p>
+                                <p>
+                                    Content is designed for university-level study, professional research, 
+                                    and informed public discourse on the intersection of technology, sexuality, 
+                                    and human relationships in the 21st century.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3 class="info-card__title">Academic Disclaimer</h3>
+                            <div class="info-card__content">
+                                <p>
+                                    This content is purely educational and does not endorse any particular viewpoint, 
+                                    behavior, or commercial product. All information is sourced from reputable academic 
+                                    institutions, peer-reviewed journals, and verified news outlets.
+                                </p>
+                                <p>
+                                    Research presented here is intended for mature, academic audiences studying fields 
+                                    related to human sexuality, technology ethics, sociology, and psychology. 
+                                    Content should be interpreted within appropriate academic and professional contexts.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-section">
+                        <div class="contact-card">
+                            <h3 class="contact-card__title">Research Collaboration</h3>
+                            <form class="contact-form" id="contact-form" novalidate>
+                                <div class="form-group">
+                                    <label for="contact-name" class="form-label">Full Name</label>
+                                    <input type="text" id="contact-name" name="name" class="form-input" required 
+                                           aria-describedby="name-error" autocomplete="name">
+                                    <div id="name-error" class="form-error" aria-live="polite"></div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contact-email" class="form-label">Email Address</label>
+                                    <input type="email" id="contact-email" name="email" class="form-input" required 
+                                           aria-describedby="email-error" autocomplete="email">
+                                    <div id="email-error" class="form-error" aria-live="polite"></div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contact-institution" class="form-label">Institution/Organization</label>
+                                    <input type="text" id="contact-institution" name="institution" class="form-input" 
+                                           aria-describedby="institution-error" autocomplete="organization">
+                                    <div id="institution-error" class="form-error" aria-live="polite"></div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contact-subject" class="form-label">Research Area</label>
+                                    <select id="contact-subject" name="subject" class="form-select" required 
+                                            aria-describedby="subject-error">
+                                        <option value="">Select research area</option>
+                                        <option value="sociology">Sociology & Cultural Studies</option>
+                                        <option value="psychology">Psychology & Behavioral Science</option>
+                                        <option value="ethics">Technology Ethics & Philosophy</option>
+                                        <option value="legal">Legal & Policy Research</option>
+                                        <option value="anthropology">Anthropology & Human Studies</option>
+                                        <option value="collaboration">Research Collaboration</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <div id="subject-error" class="form-error" aria-live="polite"></div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contact-message" class="form-label">Message</label>
+                                    <textarea id="contact-message" name="message" class="form-textarea" rows="5" 
+                                              required aria-describedby="message-error" 
+                                              placeholder="Please describe your research interests or collaboration proposals..."></textarea>
+                                    <div id="message-error" class="form-error" aria-live="polite"></div>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn--primary">
+                                        <span class="btn__text">Submit Inquiry</span>
+                                        <span class="btn__loader" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Animation Section -->
+    <section class="animation-section" aria-labelledby="animation-title">
+        <div class="animation-section__container container">
+            <header class="animation-section__header">
+                <h2 id="animation-title" class="sr-only">Educational Visualization</h2>
+                <p class="animation-section__description">
+                    Academic visualization placeholder for educational simulation content
+                </p>
+                <div class="animation-section__disclaimer">
+                    <p><strong>Educational Notice:</strong> This section contains academic visualization content for research purposes. Viewer discretion advised.</p>
+                </div>
+            </header>
+            
+            <div class="animation-container" id="animation-container">
+                <div class="animation-placeholder">
+                    <div class="placeholder-content">
+                        <h3>Stop-Motion Animation Placeholder</h3>
+                        <p>Educational visualization system would be implemented here</p>
+                        <div class="animation-controls">
+                            <button class="animation-btn" id="animation-play" aria-label="Play educational animation">
+                                <span class="btn__icon">▶</span>
+                                <span class="btn__text">Play Simulation</span>
+                            </button>
+                            <button class="animation-btn" id="animation-pause" aria-label="Pause educational animation" disabled>
+                                <span class="btn__icon">⏸</span>
+                                <span class="btn__text">Pause</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="animation-frames">
+                        <div class="frame frame--active" data-frame="1">
+                            <div class="frame-placeholder">Frame 1: Initial State</div>
+                        </div>
+                        <div class="frame" data-frame="2">
+                            <div class="frame-placeholder">Frame 2: Interaction State</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer__container container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3 class="footer__title">Educational Purpose</h3>
+                    <p class="footer__text">
+                        This resource provides comprehensive academic information about robosexuality 
+                        for educational research and scholarly discourse.
+                    </p>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__title">Research Standards</h3>
+                    <p class="footer__text">
+                        All content is sourced from peer-reviewed academic research, reputable news outlets, 
+                        and verified case studies following established research methodologies.
+                    </p>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__title">Academic Disclaimer</h3>
+                    <p class="footer__text">
+                        Content is for educational and research use only. This site maintains academic neutrality 
+                        and does not endorse any particular viewpoint or behavior.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    &copy; 2024 Robosexuality Research Initiative. All rights reserved. 
+                    Educational use under academic fair use provisions.
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript Modules -->
+    <script type="module" src="./assets/scripts/main.js"></script>
+    
+    <!-- Fallback for browsers without module support -->
+    <script nomodule src="./assets/scripts/fallback.js"></script>
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Robosexuality: Love in the Age of Machines",
+        "description": "Comprehensive academic analysis of robosexuality and human-robot relationships",
+        "url": "",
+        "inLanguage": "en-US",
+        "isAccessibleForFree": true,
+        "about": {
+            "@type": "Thing",
+            "name": "Robosexuality Research",
+            "description": "Academic study of human-robot relationships and their societal implications"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Academic Research Initiative"
+        },
+        "educationalUse": "Research and academic study",
+        "audience": {
+            "@type": "EducationalAudience",
+            "educationalRole": "student, researcher, academic"
+        }
+    }
+    </script>
+</body>
+</html>
