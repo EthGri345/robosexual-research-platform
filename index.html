@@ -210,30 +210,25 @@
         </div>
     </header>
     
-    <!-- Crypto Address Section -->
-    <section class="crypto-address-section">
-        <div class="container">
-            <div class="crypto-address">
-                <label class="crypto-address__label">Contract Address (CA):</label>
-                <div class="crypto-address__container">
-                    <input type="text" 
-                           class="crypto-address__input" 
-                           id="contract-address" 
-                           value="2RL73y7ocSm5qTcrJfiBhrCVtog2FRHDBxGw9bN1pump" 
-                           readonly 
-                           aria-label="Contract Address">
-                    <button class="crypto-address__copy" 
-                            id="copy-address" 
-                            aria-label="Copy contract address to clipboard"
-                            title="Copy to clipboard">
-                        <span class="copy-icon">📋</span>
-                        <span class="copy-text">Copy</span>
-                    </button>
-                </div>
-                <div class="copy-feedback" id="copy-feedback" aria-live="polite"></div>
-            </div>
+    <!-- Crypto Address Widget -->
+    <div class="crypto-widget">
+        <div class="crypto-widget__content" id="crypto-widget">
+            <span class="crypto-widget__label">CA:</span>
+            <input type="text" 
+                   class="crypto-widget__address" 
+                   id="contract-address" 
+                   value="2RL73y7ocSm5qTcrJfiBhrCVtog2FRHDBxGw9bN1pump" 
+                   readonly 
+                   aria-label="Contract Address">
+            <button class="crypto-widget__copy" 
+                    id="copy-address" 
+                    aria-label="Copy contract address"
+                    title="Copy CA">
+                📋
+            </button>
         </div>
-    </section>
+        <div class="copy-feedback" id="copy-feedback" aria-live="polite"></div>
+    </div>
     
     <!-- Main Content -->
     <main id="main-content" role="main">

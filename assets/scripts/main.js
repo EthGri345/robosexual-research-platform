@@ -1044,8 +1044,8 @@ class CryptoModule {
   constructor(app) {
     this.app = app;
     this.elements = {
-      addressInput: document.getElementById('contract-address'),
-      copyButton: document.getElementById('copy-address'),
+      addressInput: document.querySelector('.crypto-widget__address'),
+      copyButton: document.querySelector('.crypto-widget__copy'),
       feedback: document.getElementById('copy-feedback')
     };
     
@@ -1125,9 +1125,8 @@ class CryptoModule {
   showSuccess() {
     // Update button state
     this.elements.copyButton.classList.add('copied');
-    const copyText = this.elements.copyButton.querySelector('.copy-text');
-    const originalText = copyText.textContent;
-    copyText.textContent = 'Copied!';
+    const originalText = this.elements.copyButton.textContent;
+    this.elements.copyButton.textContent = '✓';
     
     // Show feedback
     if (this.elements.feedback) {
@@ -1138,7 +1137,7 @@ class CryptoModule {
     // Reset after delay
     setTimeout(() => {
       this.elements.copyButton.classList.remove('copied');
-      copyText.textContent = originalText;
+      this.elements.copyButton.textContent = originalText;
       
       if (this.elements.feedback) {
         this.elements.feedback.classList.remove('show');
@@ -1193,6 +1192,11 @@ class ChartModule {
     if (!this.elements.loadButton) return;
 
     this.bindEvents();
+    
+    // Auto-load chart on initialization
+    setTimeout(() => {
+      this.loadChart();
+    }, 500);
   }
 
   bindEvents() {
