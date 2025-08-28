@@ -71,6 +71,12 @@ class RobosexualityApp {
     // Form Module
     this.modules.set('form', new FormModule(this));
     
+    // Crypto Module
+    this.modules.set('crypto', new CryptoModule(this));
+    
+    // Chart Module
+    this.modules.set('chart', new ChartModule(this));
+    
     // Analytics Module (placeholder)
     this.modules.set('analytics', new AnalyticsModule(this));
   }
@@ -1031,6 +1037,273 @@ class FormModule {
 }
 
 // ============================================================================
+// CRYPTO MODULE
+// ============================================================================
+
+class CryptoModule {
+  constructor(app) {
+    this.app = app;
+    this.elements = {
+      addressInput: document.getElementById('contract-address'),
+      copyButton: document.getElementById('copy-address'),
+      feedback: document.getElementById('copy-feedback')
+    };
+    
+    this.init();
+  }
+
+  init() {
+    if (!this.elements.addressInput || !this.elements.copyButton) return;
+
+    this.bindEvents();
+    this.setupAccessibility();
+  }
+
+  bindEvents() {
+    // Copy button click
+    this.elements.copyButton.addEventListener('click', () => this.copyAddress());
+    
+    // Input click also copies
+    this.elements.addressInput.addEventListener('click', () => this.copyAddress());
+    
+    // Keyboard support
+    this.elements.addressInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.copyAddress();
+      }
+    });
+  }
+
+  setupAccessibility() {
+    // Make input focusable and clickable
+    this.elements.addressInput.setAttribute('tabindex', '0');
+    this.elements.addressInput.style.cursor = 'pointer';
+  }
+
+  async copyAddress() {
+    const address = this.elements.addressInput.value;
+    
+    try {
+      // Use modern clipboard API if available
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(address);
+      } else {
+        // Fallback for older browsers
+        this.fallbackCopy(address);
+      }
+      
+      this.showSuccess();
+      this.app.getModule('analytics')?.trackCryptoAddressCopy(address);
+      
+    } catch (error) {
+      console.error('Failed to copy address:', error);
+      this.showError();
+    }
+  }
+
+  fallbackCopy(text) {
+    // Create temporary textarea
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    textarea.style.pointerEvents = 'none';
+    
+    document.body.appendChild(textarea);
+    textarea.select();
+    textarea.setSelectionRange(0, text.length);
+    
+    const success = document.execCommand('copy');
+    document.body.removeChild(textarea);
+    
+    if (!success) {
+      throw new Error('Copy command failed');
+    }
+  }
+
+  showSuccess() {
+    // Update button state
+    this.elements.copyButton.classList.add('copied');
+    const copyText = this.elements.copyButton.querySelector('.copy-text');
+    const originalText = copyText.textContent;
+    copyText.textContent = 'Copied!';
+    
+    // Show feedback
+    if (this.elements.feedback) {
+      this.elements.feedback.textContent = '✓ Address copied to clipboard';
+      this.elements.feedback.classList.add('show');
+    }
+    
+    // Reset after delay
+    setTimeout(() => {
+      this.elements.copyButton.classList.remove('copied');
+      copyText.textContent = originalText;
+      
+      if (this.elements.feedback) {
+        this.elements.feedback.classList.remove('show');
+        setTimeout(() => {
+          this.elements.feedback.textContent = '';
+        }, 300);
+      }
+    }, 2000);
+  }
+
+  showError() {
+    if (this.elements.feedback) {
+      this.elements.feedback.textContent = '❌ Failed to copy address';
+      this.elements.feedback.style.color = '#ff4444';
+      this.elements.feedback.classList.add('show');
+      
+      setTimeout(() => {
+        this.elements.feedback.classList.remove('show');
+        this.elements.feedback.style.color = '';
+        setTimeout(() => {
+          this.elements.feedback.textContent = '';
+        }, 300);
+      }, 3000);
+    }
+  }
+
+  updateAddress(newAddress) {
+    if (this.elements.addressInput) {
+      this.elements.addressInput.value = newAddress;
+    }
+  }
+}
+
+// ============================================================================
+// CHART MODULE
+// ============================================================================
+
+class ChartModule {
+  constructor(app) {
+    this.app = app;
+    this.elements = {
+      loadButton: document.getElementById('load-chart'),
+      placeholder: document.getElementById('dexscreener-chart'),
+      iframe: document.getElementById('dexscreener-iframe')
+    };
+    
+    this.isLoaded = false;
+    this.init();
+  }
+
+  init() {
+    if (!this.elements.loadButton) return;
+
+    this.bindEvents();
+  }
+
+  bindEvents() {
+    this.elements.loadButton.addEventListener('click', () => this.loadChart());
+  }
+
+  async loadChart() {
+    if (this.isLoaded) return;
+
+    try {
+      // Show loading state
+      this.setLoadingState(true);
+      
+      // Simulate loading delay
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // For now, show a placeholder message since we don't have a real contract address
+      this.showChartPlaceholder();
+      
+      this.isLoaded = true;
+      this.app.getModule('analytics')?.trackChartLoad();
+      
+    } catch (error) {
+      console.error('Failed to load chart:', error);
+      this.showError();
+    }
+  }
+
+  showChartPlaceholder() {
+    // Update placeholder content
+    const placeholder = this.elements.placeholder.querySelector('.chart-placeholder');
+    if (placeholder) {
+      placeholder.innerHTML = `
+        <div class="chart-placeholder__icon">📊</div>
+        <h3 class="chart-placeholder__title">Chart Ready</h3>
+        <p class="chart-placeholder__text">
+          DexScreener chart integration is ready. 
+          Replace the placeholder contract address with a real address to display live trading data.
+        </p>
+        <div class="chart-placeholder__details">
+          <div class="placeholder-stat">
+            <span class="stat-label">Status:</span>
+            <span class="stat-value">Ready</span>
+          </div>
+          <div class="placeholder-stat">
+            <span class="stat-label">Integration:</span>
+            <span class="stat-value">Active</span>
+          </div>
+          <div class="placeholder-stat">
+            <span class="stat-label">Platform:</span>
+            <span class="stat-value">DexScreener</span>
+          </div>
+        </div>
+        <p style="color: var(--color-text-muted); font-size: var(--font-size-sm); margin-top: var(--spacing-lg);">
+          <strong>Next Steps:</strong><br>
+          1. Deploy your token contract<br>
+          2. Update the contract address in the header<br>
+          3. Chart will automatically display live data
+        </p>
+      `;
+    }
+  }
+
+  loadRealChart(contractAddress) {
+    // This method would be called when a real contract address is available
+    const dexScreenerUrl = `https://dexscreener.com/ethereum/${contractAddress}?embed=1&theme=dark&trades=0&info=0`;
+    
+    if (this.elements.iframe) {
+      this.elements.iframe.src = dexScreenerUrl;
+      this.elements.iframe.style.display = 'block';
+      
+      // Hide placeholder
+      if (this.elements.placeholder) {
+        this.elements.placeholder.style.display = 'none';
+      }
+    }
+  }
+
+  setLoadingState(loading) {
+    const button = this.elements.loadButton;
+    if (!button) return;
+
+    if (loading) {
+      button.textContent = 'Loading Chart...';
+      button.disabled = true;
+      button.style.opacity = '0.7';
+    } else {
+      button.textContent = 'Load Live Chart';
+      button.disabled = false;
+      button.style.opacity = '1';
+    }
+  }
+
+  showError() {
+    const placeholder = this.elements.placeholder.querySelector('.chart-placeholder');
+    if (placeholder) {
+      placeholder.innerHTML = `
+        <div class="chart-placeholder__icon">❌</div>
+        <h3 class="chart-placeholder__title">Chart Load Error</h3>
+        <p class="chart-placeholder__text">
+          Failed to load trading chart. Please try again later.
+        </p>
+        <button class="chart-load-btn" onclick="location.reload()">Retry</button>
+      `;
+    }
+    
+    this.setLoadingState(false);
+  }
+}
+
+// ============================================================================
 // ANALYTICS MODULE
 // ============================================================================
 
@@ -1099,6 +1372,14 @@ class AnalyticsModule {
 
   trackFormSubmission(formName, result) {
     this.trackEvent('Form', 'Submit', formName, result === 'success' ? 1 : 0);
+  }
+
+  trackCryptoAddressCopy(address) {
+    this.trackEvent('Crypto', 'Address Copy', address.substring(0, 10) + '...', 1);
+  }
+
+  trackChartLoad() {
+    this.trackEvent('Chart', 'Load', 'DexScreener Integration', 1);
   }
 
   setupPerformanceTracking() {
@@ -1181,6 +1462,8 @@ if (typeof module !== 'undefined' && module.exports) {
     ScrollModule,
     AnimationModule,
     FormModule,
+    CryptoModule,
+    ChartModule,
     AnalyticsModule
   };
 }

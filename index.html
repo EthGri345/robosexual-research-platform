@@ -155,6 +155,25 @@
                     <span class="brand__primary">Robosexuals</span>
                     <span class="brand__subtitle">Love in the Age of Machines</span>
                 </h1>
+                <div class="crypto-address">
+                    <label class="crypto-address__label">Contract Address (CA):</label>
+                    <div class="crypto-address__container">
+                        <input type="text" 
+                               class="crypto-address__input" 
+                               id="contract-address" 
+                               value="TBD3xF7K9mN2pQ8vR1sY4jW6eZ5nA0qL9tM8cH" 
+                               readonly 
+                               aria-label="Contract Address">
+                        <button class="crypto-address__copy" 
+                                id="copy-address" 
+                                aria-label="Copy contract address to clipboard"
+                                title="Copy to clipboard">
+                            <span class="copy-icon">📋</span>
+                            <span class="copy-text">Copy</span>
+                        </button>
+                    </div>
+                    <div class="copy-feedback" id="copy-feedback" aria-live="polite"></div>
+                </div>
             </div>
             
             <nav class="nav" role="navigation" aria-label="Main navigation">
@@ -895,6 +914,56 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- DexScreener Chart Section -->
+    <section class="dexscreener-section" aria-labelledby="chart-title">
+        <div class="dexscreener-section__container container">
+            <header class="dexscreener-section__header">
+                <h2 id="chart-title" class="dexscreener-section__title">Live Trading Data</h2>
+                <p class="dexscreener-section__description">
+                    Real-time price and trading information
+                </p>
+            </header>
+            
+            <div class="dexscreener-wrapper">
+                <div class="dexscreener-placeholder" id="dexscreener-chart">
+                    <div class="chart-placeholder">
+                        <div class="chart-placeholder__icon">📈</div>
+                        <h3 class="chart-placeholder__title">DexScreener Chart Integration</h3>
+                        <p class="chart-placeholder__text">Professional trading chart will be embedded here</p>
+                        <div class="chart-placeholder__details">
+                            <div class="placeholder-stat">
+                                <span class="stat-label">Price:</span>
+                                <span class="stat-value">$0.001234</span>
+                            </div>
+                            <div class="placeholder-stat">
+                                <span class="stat-label">Market Cap:</span>
+                                <span class="stat-value">$1.2M</span>
+                            </div>
+                            <div class="placeholder-stat">
+                                <span class="stat-label">24h Volume:</span>
+                                <span class="stat-value">$45.6K</span>
+                            </div>
+                        </div>
+                        <button class="chart-load-btn" id="load-chart">Load Live Chart</button>
+                    </div>
+                </div>
+                
+                <!-- Actual chart iframe will be loaded here -->
+                <iframe 
+                    id="dexscreener-iframe" 
+                    src="" 
+                    style="display: none;"
+                    width="100%" 
+                    height="600" 
+                    frameborder="0" 
+                    scrolling="no"
+                    allow="clipboard-read; clipboard-write"
+                    title="DexScreener Trading Chart">
+                </iframe>
             </div>
         </div>
     </section>

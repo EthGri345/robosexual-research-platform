@@ -1154,6 +1154,241 @@
 }
 
 /* ============================================================================
+   CRYPTO ADDRESS COMPONENT
+   ============================================================================ */
+
+.crypto-address {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: rgba(0, 31, 63, 0.2);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: var(--border-radius-sm);
+  backdrop-filter: blur(5px);
+}
+
+.crypto-address__label {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: var(--font-weight-bold);
+}
+
+.crypto-address__container {
+  display: flex;
+  gap: var(--spacing-xs);
+  align-items: center;
+}
+
+.crypto-address__input {
+  flex: 1;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: var(--border-radius-sm);
+  color: var(--color-secondary);
+  font-family: 'Courier New', monospace;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.crypto-address__input:hover,
+.crypto-address__input:focus {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+  outline: none;
+}
+
+.crypto-address__copy {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--color-secondary);
+  color: var(--color-background);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+}
+
+.crypto-address__copy:hover {
+  background: #00E6E6;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.crypto-address__copy:active {
+  transform: translateY(0);
+}
+
+.crypto-address__copy.copied {
+  background: #00FF00;
+  animation: copy-success 0.3s ease-out;
+}
+
+.copy-feedback {
+  font-size: var(--font-size-xs);
+  color: var(--color-secondary);
+  margin-top: var(--spacing-xs);
+  min-height: 1em;
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.copy-feedback.show {
+  opacity: 1;
+}
+
+@keyframes copy-success {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* ============================================================================
+   DEXSCREENER CHART SECTION
+   ============================================================================ */
+
+.dexscreener-section {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-background) 100%);
+  border-top: 2px solid rgba(0, 255, 255, 0.3);
+  padding: var(--spacing-3xl) 0;
+  margin-top: var(--spacing-3xl);
+}
+
+.dexscreener-section__header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.dexscreener-section__title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-light);
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-md);
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.dexscreener-section__description {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.dexscreener-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--color-surface);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.chart-placeholder {
+  padding: var(--spacing-3xl);
+  text-align: center;
+}
+
+.chart-placeholder__icon {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.7;
+}
+
+.chart-placeholder__title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+.chart-placeholder__text {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xl);
+}
+
+.chart-placeholder__details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.placeholder-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-md);
+  background: rgba(0, 255, 255, 0.05);
+  border-radius: var(--border-radius-sm);
+  border: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+.stat-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--spacing-xs);
+}
+
+.stat-value {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-secondary);
+  font-family: 'Courier New', monospace;
+}
+
+.chart-load-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-md) var(--spacing-xl);
+  background: linear-gradient(45deg, var(--color-secondary), var(--color-primary));
+  color: var(--color-background);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.chart-load-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.chart-load-btn:active {
+  transform: translateY(0);
+}
+
+.dexscreener-wrapper iframe {
+  width: 100%;
+  height: 600px;
+  border: none;
+  display: block;
+}
+
+/* ============================================================================
    FOOTER
    ============================================================================ */
 
@@ -1220,6 +1455,27 @@
 }
 
 @media (max-width: 768px) {
+  .header__brand {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+  }
+  
+  .crypto-address {
+    margin-top: var(--spacing-xs);
+    padding: var(--spacing-sm);
+  }
+  
+  .crypto-address__container {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+  
+  .crypto-address__input {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-xs);
+  }
+  
   .nav__list {
     position: fixed;
     top: 100%;
